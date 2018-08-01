@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 19:14:16 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 19:24:03 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 00:46:01 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_wideclen(unsigned int widec)
 		return (0);
 }
 
-static	int ft_putwidechar(wchar_t widec)
+static int	ft_putwidechar(wchar_t widec)
 {
 	int				len;
 	int				slen;
@@ -41,23 +41,23 @@ static	int ft_putwidechar(wchar_t widec)
 	slen--;
 	while (slen)
 	{
-		current = ((wc >> ((slen) * 6 )) & 63) | 128;
+		current = ((wc >> ((slen) * 6)) & 63) | 128;
 		len += ft_putchar(current);
 	}
 	return (len);
 }
 
-int		ft_putwstr(wchar_t *wides, int pcsn)
+int			ft_putwstr(wchar_t *wides, int pcsn)
 {
-		int		len;
+	int		len;
 
-		len = 0;
-		if (wides == NULL)
-			return (ft_putstr("(null)", pcsn));
-		while (*wides)
-		{
-			len += ft_putwidechar(*wides);
-			wides++;
-		}
-		return (len);
+	len = 0;
+	if (wides == NULL)
+		return (ft_putstr("(null)", pcsn));
+	while (*wides)
+	{
+		len += ft_putwidechar(*wides);
+		wides++;
+	}
+	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:58:14 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 23:19:45 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 00:58:27 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		ft_printf(const char *format, ...)
 {
-	int	i;
+	int		i;
 	va_list	args;
 
 	i = 0;
@@ -35,4 +35,4 @@ int		ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (len);
-}				
+}

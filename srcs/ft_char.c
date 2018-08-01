@@ -6,12 +6,12 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:05:18 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 22:39:36 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 01:07:54 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_print.h"
+#include "/libft.h"
+#include "/ft_print.h"
 
 int		ft_char(t_char *ract, void *c)
 {
