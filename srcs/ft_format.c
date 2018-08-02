@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 21:55:47 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 22:12:50 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 12:10:39 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ static void		ft_flg(char **flag,	t_char *ract)
 	if (**flag == '#')
 		(ract->flg)[1] = '#';
 	else if (**flag == '0')
-		(ract->flg)[2] = '0'
+		(ract->flg)[2] = '0';
 	else if (**flag == '-')
 		(ract->flg)[3] = '-';
 	else if (**flag == '+')
-		(ract->flg)[4] == '+';
+		(ract->flg)[4] = '+';
 	else if (**flag == ' ')
 		(ract->flg)[5] = ' ';
 }
@@ -57,12 +57,12 @@ static int	ft_doublecheck(char *form, char c)
 		return (0);
 }
 
-static void		ft_conversion(char **form, t_char)
+static void		ft_conversion(char **form, t_char *ract)
 {
 	if (**form == 'h' && !(ract->h) && !(ract->hh))
 	{
 		if (ft_doublecheck(*form, 'h'))
-			ract->hh == 1;
+			ract->hh = 1;
 		else
 			ract->h = 1;
 	}
@@ -104,5 +104,5 @@ int		ft_format(char **form, va_list arg)
 		ract.spec = **form;
 	else
 		ract.spec = **form;
-	return (ft_spec(&ract, arg));
+	return (ft_find_spec(&ract, arg));
 }

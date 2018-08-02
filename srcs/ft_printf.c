@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:58:14 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 00:58:27 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 11:48:38 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int		ft_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			len += ft_putchar(*format);
+			i += ft_putchar(*format);
 		}
 		else
 		{
 			format++;
-			len += ft_format((char**)(&format), args);
+			i += ft_format((char**)(&format), args);
 		}
 		format++;
 	}
 	va_end(args);
-	return (len);
+	return (i);
 }

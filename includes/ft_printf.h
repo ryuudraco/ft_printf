@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:09:20 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 00:28:41 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 09:45:36 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int 	ft_format(char **form, va_list arg);
 int 	ft_hex(t_char *ract, void *n);
 int 	ft_liter(t_char *ract, char c);
 int 	ft_nbr(t_char *ract, void *n);
-int 	ft_oct(t_char *ract, void *n)
+int 	ft_oct(t_char *ract, void *n);
 int 	ft_point(t_char *ract, void *n);
 int 	ft_printf(const char *format, ...);
 int 	ft_str(t_char *ract, void *s);

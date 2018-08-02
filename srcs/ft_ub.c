@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 23:29:51 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 23:29:55 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 11:51:44 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t		ft_ubl(t_char *ract, intmax_t n)
 		i = ract->pcsn;
 	}
 	if (i > 0)
-		ract-pcsn = j;
+		ract->pcsn = j;
 	else if (n == 0 && ract->pcsn == 0)
 	{
 		ract->pcsn = -2;
@@ -61,11 +61,11 @@ static size_t ft_printub(uintmax_t n, t_char *ract)
 		return (0);
 	if (n >= 10)
 	{
-		len += ft_printhex(n / 10, ract);
-		len += ft_putchar(base[n % 10 + 48]);
+		len += ft_printub(n / 10, ract);
+		len += ft_putchar(n % 10 + 48);
 	}
 	else
-		len += ft_putchar(base[n + 48]);
+		len += ft_putchar(n + 48);
 	return (len);
 }
 
@@ -75,7 +75,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 
 	len = 0;
 	if ((ract->flg)[2] == '0' && ract->pcsn == -1)
-		ract->flg[0] == '0';
+		ract->flg[0] = '0';
 	ract->slen = ft_ubl(ract, n);
 	while ((ract->flg[3] != '-' && ract->width > (ract->slen)))
 		(len += ft_putchar((ract->flg)[0])) && ract->width--;

@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 11:28:44 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 23:16:51 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 11:48:11 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static size_t		ft_pointl(t_char *ract, intmax_t n)
 	if (ract->flg[1] == '#' && n != 0)
 		i += 2;
 	if (i > 0)
-		ract-pcsn = j;
+		ract->pcsn = j;
 	else if (n == 0 && ract->pcsn == 0)
 	{
 		ract->pcsn = -2;
@@ -64,7 +64,7 @@ static size_t ft_printpoint(uintmax_t n, t_char *ract, char *base)
 		return (0);
 	if (n >= 16)
 	{
-		len += ft_printhex(n / 16, ract, base);
+		len += ft_printpoint(n / 16, ract, base);
 		len += ft_putchar(base[n % 16]);
 	}
 	else
@@ -78,7 +78,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 
 	len = 0;
 	if ((ract->flg)[2] == '0' && ract->pcsn == -1)
-		ract->flg[0] == '0';
+		ract->flg[0] = '0';
 	ract->slen = ft_pointl(ract, n);
 	if (ract->flg[0] == '0')
 		len += ft_putstr("0x", -1);
@@ -88,7 +88,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 		len += ft_putstr("0x", -1);
 	while (ract->pcsn != -1 && ract->pcsn > 0)
 		(len += ft_putchar('0')) && ract->pcsn--;
-	len += (n, ract, "0123456789abcdef")
+	len += ft_printpoint(n, ract, "0123456789abcdef");
 	while (ract->width > ract->slen && (ract->flg)[3] == '-')
 		(len += ft_putchar(' ')) && ract->width--;
 	return (len);

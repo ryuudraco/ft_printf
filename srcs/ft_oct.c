@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:25:53 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 23:09:00 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 11:44:26 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static size_t		ft_octl(t_char *ract, intmax_t n)
 	if (ract->flg[1] == '#' && n != 0)
 			i++;
 	if (i > 0)
-		ract-pcsn = j;
+		ract->pcsn = j;
 	else if (n == 0 && ract->pcsn == 0 && ract->flg[1] != '#')
 	{
 		ract->pcsn = -2;
@@ -64,7 +64,7 @@ static size_t ft_printoct(uintmax_t n, t_char *ract, char *base)
 		return (0);
 	if (n >= 8)
 	{
-		len += ft_printhex(n / 8, ract, base);
+		len += ft_printoct(n / 8, ract, base);
 		len += ft_putchar(base[n % 8]);
 	}
 	else
@@ -78,7 +78,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 
 	len = 0;
 	if ((ract->flg)[2] == '0' && ract->pcsn == -1)
-		ract->flg[0] == '0';
+		ract->flg[0] = '0';
 	ract->slen = ft_octl(ract, n);
 	if (ract->flg[0] == '0' && ract->flg[1] == '#' && n != 0)
 		len += ft_putchar('0');

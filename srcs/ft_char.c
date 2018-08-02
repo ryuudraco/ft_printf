@@ -6,12 +6,12 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:05:18 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 01:07:54 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 09:48:27 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/libft.h"
-#include "/ft_print.h"
+#include "libft.h"
+#include "ft_printf.h"
 
 int		ft_char(t_char *ract, void *c)
 {
@@ -31,7 +31,7 @@ int		ft_char(t_char *ract, void *c)
 		len += ft_putchar((int)c);
 	else
 		len += ft_putchar(ract->spec);
-	if (ract->width > 1 && (ract->flag)[3] == '-')
+	if (ract->width > 1 && (ract->flg)[3] == '-')
 	{
 		while (--(ract->width))
 			len += ft_putchar(' ');

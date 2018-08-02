@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:30:08 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 23:49:59 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 12:10:11 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_str(t_char *ract, void *s)
 
 	ract->slen = (s != NULL) ? ft_strlen((char *)s) : 6;
 	len = 0;
-	ract->slen = !ract->pcsn ? ract->wdith : ract->slen;
+	ract->slen = !ract->pcsn ? ract->width : ract->slen;
 	if ((ract->flg)[2] == '0')
 		(ract->flg)[0] = '0';
 	while ((ract->flg)[3] != '-' && ract->width > ract->slen)

@@ -6,7 +6,7 @@
 #    By: jheath <jheath@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/26 16:20:10 by jheath            #+#    #+#              #
-#    Updated: 2018/08/02 01:05:21 by jheath           ###   ########.fr        #
+#    Updated: 2018/08/02 12:17:34 by jheath           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME =						libftprintf.a
 # Flags.
 CC =						gcc
 CFLAGS =					-Wall -Werror -Wextra
-HEADER =					-Includes
+HEADER =					-Iincludes
 
 # Remove.
 RM =						rm -f
@@ -36,9 +36,7 @@ SRCS =						ft_char.c ft_find_spec.c ft_format.c ft_hex.c ft_liter.c \
 LIBFT =						$(addprefix $(DIR_LIBFT),$(LIBFTS))
 SRC =						$(addprefix $(DIR_SRC),$(SRCS))
 
-.PHONY =					all clean fclean clean re
-
-all =						$(NAME)
+all: $(NAME)
 
 # Compilation
 $(NAME):
@@ -48,12 +46,14 @@ $(NAME):
 						@echo "Structure complete!"
 
 # Cleanup duty
-clean :
-						@$(RM) $(OBJ)
-						@echo "Unit lost!"
+clean:
+					@$(RM) $(OBJ)
+					@echo "Unit lost!"
 
-fclean :					clean
-						@$(RM) $(NAME)
-						@echo "Pylon lost"
+fclean:					clean
+					@$(RM) $(NAME)
+					@echo "Pylon lost"
 
-re :						fclean all
+re:						fclean all
+
+.PHONY =					all clean fclean clean re

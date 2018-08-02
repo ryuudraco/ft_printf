@@ -6,13 +6,13 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 09:07:46 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 19:34:41 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 11:52:31 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);

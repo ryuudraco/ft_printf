@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 19:14:16 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 00:46:01 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 11:56:23 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ static int	ft_putwidechar(wchar_t widec)
 	slen = ft_wideclen(widec);
 	if (slen == 1)
 		return (ft_putchar(widec));
-	current = (240 << (4 - slen)) | (wc >> ((slen - 1) * 6));
+	current = (240 << (4 - slen)) | (widec >> ((slen - 1) * 6));
 	len += ft_putchar(current);
 	slen--;
 	while (slen)
 	{
-		current = ((wc >> ((slen) * 6)) & 63) | 128;
+		current = ((widec >> ((slen) * 6)) & 63) | 128;
 		len += ft_putchar(current);
 	}
 	return (len);

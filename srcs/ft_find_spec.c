@@ -6,20 +6,20 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:07:41 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/01 23:33:46 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 09:51:14 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-int		ft_find_spec(va_list arg, char c)
+int		ft_find_spec(t_char *ract, va_list arg)
 {
 	int	i;
 
 	i = 0;
 	if (ract->spec == '%')
-		len = ft_liter(ract, '%');
+		i = ft_liter(ract, '%');
 	else if (ract->spec == 's' || ract->spec == 'S')
 		i = ft_str(ract, va_arg(arg, void *));
 	else if (ract->spec == 'p')
