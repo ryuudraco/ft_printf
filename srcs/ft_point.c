@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 11:28:44 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 11:48:11 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 12:33:34 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 	return (len);
 }
 
-int 		ft_hex(t_char *ract, void *n)
+int 		ft_point(t_char *ract, void *n)
 {
 	return (ft_manager(ract, (uintmax_t)n));
 }

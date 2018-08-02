@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:21:40 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 11:42:10 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 12:34:43 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ static int 	ft_manager(t_char *ract, intmax_t n, int len)
 	return (len);
 }
 
-int 		ft_num(t_char *ract, void *n)
+int 		ft_nbr(t_char *ract, void *n)
 {
 	int i;
 
