@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:58:14 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 11:48:38 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 15:43:10 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (*format)
 	{
-		if (*format == '%')
+		if (*format != '%')
 		{
 			i += ft_putchar(*format);
 		}

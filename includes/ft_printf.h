@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:09:20 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 09:45:36 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 15:17:58 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_char
 	short	slen;
 }				t_char;
 
-# define SPECS	"sSpdDioOuUxXcC"
+# define SPECS	"%sSpdDioOuUxXcC"
 
 /*
 ** s		: String of characters
@@ -54,7 +54,7 @@ typedef struct s_char
 ** c or C : Character
 */
 
-# define FLAGS "#0-+"
+# define FLAGS "#0-+ "
 
 /*
 ** HASH  : Used with o, x or X specifiers the value is preceeded with

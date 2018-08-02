@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:21:40 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 12:34:43 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 15:25:32 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,24 @@ static size_t		ft_numlen(t_char *ract, intmax_t n)
 
 	i = ft_length(n);
 	j = 0;
+	if (ract->pcsn != -1 && ract->pcsn > i)
 	{
-		if (ract->pcsn != -1 && ract->pcsn > i)
-		{
-			j = (ract->pcsn - i);
-			i = ract->pcsn;
-		}
-		if (i > 0)
-			ract->pcsn = j;
-		else if (n == 0 && ract->pcsn == 0)
-		{
-			ract->pcsn = -2;
-			i = 0;
-		}
-		else
-			ract->pcsn = -1;
-		if ((n < 0) || (((ract->flg)[4] == '+' || (ract->flg)[5] == ' ') \
+		j = (ract->pcsn - i);
+		i = ract->pcsn;
+	}
+	if (i > 0)
+		ract->pcsn = j;
+	else if (n == 0 && ract->pcsn == 0)
+	{
+		ract->pcsn = -2;
+		i = 0;
+	}
+	else
+		ract->pcsn = -1;
+	if ((n < 0) || (((ract->flg)[4] == '+' || (ract->flg)[5] == ' ') \
 					&& n >= 0))
 		i++;
-		return (i);
-	}
+	return (i);
 }
 
 static size_t ft_putnbr(intmax_t n, t_char *ract)
@@ -70,8 +68,8 @@ static size_t ft_putnbr(intmax_t n, t_char *ract)
 		len += ft_putchar(ABS(n) + 48);
 	}
 	else
-		len += ft_putnbr(n / 16, ract);
-		len += ft_putnbr(n % 16, ract);
+		len += ft_putnbr(n / 10, ract);
+		len += ft_putnbr(n % 10, ract);
 	return (len);
 }
 
@@ -117,9 +115,9 @@ int 		ft_nbr(t_char *ract, void *n)
 		ft_manager(ract, (long)n, i);
 	else if (ract->ll)
 		ft_manager(ract, (long long)n, i);
-	if (ract->z)
+	else if (ract->z)
 		ft_manager(ract, (size_t)n, i);
-	if (ract->j)
+	else if (ract->j)
 		ft_manager(ract, (uintmax_t)n, i);
 	else
 		ft_manager(ract, (int)n, i);

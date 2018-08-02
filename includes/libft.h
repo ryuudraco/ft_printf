@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:22:48 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 00:59:24 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 14:55:04 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int		ft_isuma(char **s);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-int		ft_putchar(char c);
+int		ft_putchar(int c);
 int		ft_putstr(char const *s, int pcsn);
 int		ft_putwstr(wchar_t *wides, int pcsn);
 int		ft_strchr(const char *str, int c);
