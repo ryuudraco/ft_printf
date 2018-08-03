@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 23:29:51 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 16:31:30 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:08:02 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 static size_t	ft_length(intmax_t n)
 {
-	size_t i;
+	size_t	i;
 
-	i = 1;
+	i = 0;
 	if (n == 0)
 		return (1);
 	while (n)
@@ -28,31 +28,31 @@ static size_t	ft_length(intmax_t n)
 	return (i);
 }
 
-static size_t		ft_ubl(t_char *ract, intmax_t n)
+static size_t	ft_unl(t_char *ract, intmax_t n)
 {
-	int i;
-	int j;
+	int		cnt;
+	int		nb;
 
-	i = ft_length(n);
-	j = 0;
-	if (ract->pcsn != -1 && ract->pcsn > i)
+	cnt = ft_length(n);
+	nb = 0;
+	if (ract->pcsn != -1 && ract->pcsn > cnt)
 	{
-		j = (ract->pcsn - i);
-		i = ract->pcsn;
+		nb = (ract->pcsn - cnt);
+		cnt = ract->pcsn;
 	}
-	if (i > 0)
-		ract->pcsn = j;
+	if (cnt > 0)
+		ract->pcsn = nb;
 	else if (n == 0 && ract->pcsn == 0)
 	{
 		ract->pcsn = -2;
-		i = 0;
+		cnt = 0;
 	}
 	else
 		ract->pcsn = -1;
-	return (i);
+	return (cnt);
 }
 
-static size_t ft_printub(uintmax_t n, t_char *ract)
+static size_t	ft_printun(uintmax_t n, t_char *ract)
 {
 	int len;
 
@@ -61,7 +61,7 @@ static size_t ft_printub(uintmax_t n, t_char *ract)
 		return (0);
 	if (n >= 10)
 	{
-		len += ft_printub(n / 10, ract);
+		len += ft_printun(n / 10, ract);
 		len += ft_putchar(n % 10 + 48);
 	}
 	else
@@ -69,25 +69,25 @@ static size_t ft_printub(uintmax_t n, t_char *ract)
 	return (len);
 }
 
-static int 	ft_manager(t_char *ract, uintmax_t n)
+static int		ft_manager(t_char *ract, uintmax_t n)
 {
 	int len;
 
 	len = 0;
 	if ((ract->flg)[2] == '0' && ract->pcsn == -1)
 		(ract->flg)[0] = '0';
-	ract->slen = ft_ubl(ract, n);
+	ract->slen = ft_unl(ract, n);
 	while ((ract->flg[3] != '-' && ract->width > (ract->slen)))
 		(len += ft_putchar((ract->flg)[0])) && ract->width--;
 	while (ract->pcsn != -1 && ract->pcsn > 0)
 		(len += ft_putchar('0')) && ract->pcsn--;
-	len += ft_printub(n, ract);
+	len += ft_printun(n, ract);
 	while (ract->width > ract->slen && (ract->flg)[3] == '-')
 		(len += ft_putchar(' ')) && ract->width--;
 	return (len);
 }
 
-int 		ft_ub(t_char *ract, void *n)
+int				ft_ub(t_char *ract, void *n)
 {
 	if (ract->spec == 'U')
 		return (ft_manager(ract, (unsigned long)n));
@@ -102,7 +102,7 @@ int 		ft_ub(t_char *ract, void *n)
 	else if (ract->z)
 		return (ft_manager(ract, (size_t)n));
 	else if (ract->j)
-		return (ft_manager(ract, (uintmax_t)n));
+		return (ft_manager(ract, (intmax_t)n));
 	else
 		return (ft_manager(ract, (unsigned int)n));
 }
