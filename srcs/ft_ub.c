@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 23:29:51 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 11:51:44 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 16:31:30 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 
 	len = 0;
 	if ((ract->flg)[2] == '0' && ract->pcsn == -1)
-		ract->flg[0] = '0';
+		(ract->flg)[0] = '0';
 	ract->slen = ft_ubl(ract, n);
 	while ((ract->flg[3] != '-' && ract->width > (ract->slen)))
 		(len += ft_putchar((ract->flg)[0])) && ract->width--;

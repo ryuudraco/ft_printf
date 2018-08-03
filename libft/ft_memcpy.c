@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:24:02 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 14:54:22 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 11:07:10 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t				i;
-	unsigned char		*dst;
-	const unsigned char *source;
+	unsigned char		*dest2;
+	const unsigned char *src2;
 
-	dst = dest;
-	source = src;
 	i = 0;
+	dest2 = dest;
+	src2 = src;
 	while (i < n)
 	{
-		dst[i] = source[i];
+		dest2[i] = src2[i];
 		i++;
 	}
-	return (dst);
+	return (dest2);
 }

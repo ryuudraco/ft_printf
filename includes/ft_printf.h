@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:09:20 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 15:17:58 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 11:08:11 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
 # include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 # define ABS(n) ((n < 0) ? -n : n)
 

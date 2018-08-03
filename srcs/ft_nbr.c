@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:21:40 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 15:25:32 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 11:55:43 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static size_t ft_putnbr(intmax_t n, t_char *ract)
 static int 	ft_manager(t_char *ract, intmax_t n, int len)
 {
 	if ((ract->flg)[2] == '0' && ract->pcsn == -1)
-		ract->flg[0] = '0';
+		(ract->flg)[0] = '0';
 	ract->slen = ft_numlen(ract, n);
 	if (n < 0 && ract->flg[0] == '0')
 		len += ft_putchar('-');

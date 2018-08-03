@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:07:41 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 09:51:14 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/02 16:23:25 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_find_spec(t_char *ract, va_list arg)
 	else if (ract->spec == 'x' || ract->spec == 'X')
 		i = ft_hex(ract, va_arg(arg, void *));
 	else if (ract->spec == 'c' || ract->spec == 'C')
-		i = ft_char(ract, va_arg(arg, void*));
+		i = ft_char(ract, va_arg(arg, void *));
 	else
 		i = (ft_char(ract, va_arg(arg, void *)));
 	ft_strdel(&(ract->flg));
