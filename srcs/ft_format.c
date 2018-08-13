@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 21:55:47 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 12:10:39 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:48:10 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		initializer(t_char *ract)
 	ract->j = 0;
 }
 
-static void		ft_flg(char **flag,	t_char *ract)
+static void		ft_flg(char **flag, t_char *ract)
 {
 	if (**flag == '#')
 		(ract->flg)[1] = '#';
@@ -40,7 +40,7 @@ static void		ft_flg(char **flag,	t_char *ract)
 		(ract->flg)[5] = ' ';
 }
 
-static int	ft_doublecheck(char *form, char c)
+static int		ft_doublecheck(char *form, char c)
 {
 	int n;
 
@@ -79,7 +79,7 @@ static void		ft_conversion(char **form, t_char *ract)
 		ract->j = 1;
 }
 
-int		ft_format(char **form, va_list arg)
+int				ft_format(char **form, va_list arg)
 {
 	t_char ract;
 

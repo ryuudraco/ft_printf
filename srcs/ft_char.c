@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:05:18 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/03 11:55:49 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:46:53 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_char(t_char *ract, void *c)
 	else
 		len += ft_putchar(ract->spec);
 	if (ract->width > 1 && (ract->flg)[3] == '-')
-	{	
+	{
 		while (--(ract->width))
 			len += ft_putchar(' ');
 	}

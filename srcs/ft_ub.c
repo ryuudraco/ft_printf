@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 23:29:51 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/03 15:08:02 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:39:26 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,26 @@ static size_t	ft_length(intmax_t n)
 
 static size_t	ft_unl(t_char *ract, intmax_t n)
 {
-	int		cnt;
-	int		nb;
+	int		i;
+	int		j;
 
-	cnt = ft_length(n);
-	nb = 0;
-	if (ract->pcsn != -1 && ract->pcsn > cnt)
+	i = ft_length(n);
+	j = 0;
+	if (ract->pcsn != -1 && ract->pcsn > i)
 	{
-		nb = (ract->pcsn - cnt);
-		cnt = ract->pcsn;
+		j = (ract->pcsn - i);
+		j = ract->pcsn;
 	}
-	if (cnt > 0)
-		ract->pcsn = nb;
+	if (i > 0)
+		ract->pcsn = j;
 	else if (n == 0 && ract->pcsn == 0)
 	{
 		ract->pcsn = -2;
-		cnt = 0;
+		i = 0;
 	}
 	else
 		ract->pcsn = -1;
-	return (cnt);
+	return (i);
 }
 
 static size_t	ft_printun(uintmax_t n, t_char *ract)

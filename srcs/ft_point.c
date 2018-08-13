@@ -6,14 +6,14 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 11:28:44 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 15:41:55 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:50:44 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-static size_t	ft_length(intmax_t n)
+static size_t		ft_length(intmax_t n)
 {
 	size_t i;
 
@@ -55,7 +55,7 @@ static size_t		ft_pointl(t_char *ract, intmax_t n)
 	return (i);
 }
 
-static size_t ft_printpoint(uintmax_t n, t_char *ract, char *base)
+static size_t		ft_printpoint(uintmax_t n, t_char *ract, char *base)
 {
 	int len;
 
@@ -72,7 +72,7 @@ static size_t ft_printpoint(uintmax_t n, t_char *ract, char *base)
 	return (len);
 }
 
-static int 	ft_manager(t_char *ract, uintmax_t n)
+static int			ft_manager(t_char *ract, uintmax_t n)
 {
 	int len;
 
@@ -94,7 +94,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 	return (len);
 }
 
-int 		ft_point(t_char *ract, void *n)
+int					ft_point(t_char *ract, void *n)
 {
 	return (ft_manager(ract, (uintmax_t)n));
 }

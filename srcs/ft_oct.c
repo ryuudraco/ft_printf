@@ -6,14 +6,14 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:25:53 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/02 15:37:28 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:49:56 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-static size_t	ft_length(intmax_t n)
+static size_t		ft_length(intmax_t n)
 {
 	size_t i;
 
@@ -55,7 +55,7 @@ static size_t		ft_octl(t_char *ract, intmax_t n)
 	return (i);
 }
 
-static size_t ft_printoct(uintmax_t n, t_char *ract, char *base)
+static size_t		ft_printoct(uintmax_t n, t_char *ract, char *base)
 {
 	int len;
 
@@ -72,7 +72,7 @@ static size_t ft_printoct(uintmax_t n, t_char *ract, char *base)
 	return (len);
 }
 
-static int 	ft_manager(t_char *ract, uintmax_t n)
+static int			ft_manager(t_char *ract, uintmax_t n)
 {
 	int len;
 
@@ -94,7 +94,7 @@ static int 	ft_manager(t_char *ract, uintmax_t n)
 	return (len);
 }
 
-int 		ft_oct(t_char *ract, void *n)
+int					ft_oct(t_char *ract, void *n)
 {
 	if (ract->spec == 'O')
 		return (ft_manager(ract, (unsigned long)n));

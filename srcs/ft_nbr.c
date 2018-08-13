@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:21:40 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/03 13:02:20 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:40:19 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,29 @@ static size_t	ft_length(intmax_t n)
 
 static size_t	ft_numlen(t_char *ract, intmax_t n)
 {
-	int		cnt;
-	int		nb;
+	int		i;
+	int		j;
 
-	cnt = ft_length(n);
-	nb = 0;
-	if (ract->pcsn != -1 && ract->pcsn > cnt)
+	i = ft_length(n);
+	j = 0;
+	if (ract->pcsn != -1 && ract->pcsn > i)
 	{
-		nb = (ract->pcsn - cnt);
-		cnt = ract->pcsn;
+		j = (ract->pcsn - i);
+		i = ract->pcsn;
 	}
-	if (cnt > 0)
-		ract->pcsn = nb;
+	if (i > 0)
+		ract->pcsn = j;
 	else if (n == 0 && ract->pcsn == 0)
 	{
 		ract->pcsn = -2;
-		cnt = 0;
+		i = 0;
 	}
 	else
 		ract->pcsn = -1;
 	if ((n < 0) || (((ract->flg)[4] == '+' || (ract->flg)[5] == ' ') \
 					&& n >= 0))
-		cnt++;
-	return (cnt);
+		i++;
+	return (i);
 }
 
 static size_t	ft_putnbr(intmax_t n, t_char *ract)

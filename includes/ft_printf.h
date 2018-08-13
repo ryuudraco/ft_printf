@@ -6,11 +6,11 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 12:09:20 by jheath            #+#    #+#             */
-/*   Updated: 2018/08/03 11:08:11 by jheath           ###   ########.fr       */
+/*   Updated: 2018/08/03 15:46:33 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	FT_PRINTF_H
+#ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdarg.h>
@@ -20,11 +20,11 @@
 
 # define ABS(n) ((n < 0) ? -n : n)
 
-# define IND 	"+-#0 .123456789hljz"
+# define IND	"+-#0 .123456789hljz"
 
-typedef struct s_char
+typedef struct	s_char
 {
-	char 	*flg;
+	char	*flg;
 	short	width;
 	short	pcsn;
 	int		h;
@@ -33,7 +33,7 @@ typedef struct s_char
 	int		ll;
 	int		z;
 	int		j;
-	char 	spec;
+	char	spec;
 	short	slen;
 }				t_char;
 
@@ -54,12 +54,12 @@ typedef struct s_char
 ** c or C : Character
 */
 
-# define FLAGS "#0-+ "
+# define FLAGS	"#0-+ "
 
 /*
 ** HASH  : Used with o, x or X specifiers the value is preceeded with
 **          0, 0x or 0X respectively for values different than zero.
-**          By default, if no digits follow, no decimal point is written. 
+**          By default, if no digits follow, no decimal point is written.
 ** ZERO  : Left-pads the number with zeroes (0) instead of spaces
 **          when padding is specified
 ** MINUS : Left-justify within the given field width;
@@ -71,7 +71,7 @@ typedef struct s_char
 **          preceded with a minus (-) sign.
 */
 
-# define CFLAGS			"hljz"
+# define CFLAGS	"hljz"
 
 /*
 ** Modifies the length of the data type.
@@ -89,16 +89,16 @@ typedef struct s_char
 ** z       | size_t        | size_t                 |        |          |
 */
 
-int 	ft_char(t_char *ract, void *c);
-int 	ft_find_spec(t_char *ract, va_list arg);
-int 	ft_format(char **form, va_list arg);
-int 	ft_hex(t_char *ract, void *n);
-int 	ft_liter(t_char *ract, char c);
-int 	ft_nbr(t_char *ract, void *n);
-int 	ft_oct(t_char *ract, void *n);
-int 	ft_point(t_char *ract, void *n);
-int 	ft_printf(const char *format, ...);
-int 	ft_str(t_char *ract, void *s);
-int 	ft_ub(t_char *ract, void *n);
+int				ft_char(t_char *ract, void *c);
+int				ft_find_spec(t_char *ract, va_list arg);
+int				ft_format(char **form, va_list arg);
+int				ft_hex(t_char *ract, void *n);
+int				ft_liter(t_char *ract, char c);
+int				ft_nbr(t_char *ract, void *n);
+int				ft_oct(t_char *ract, void *n);
+int				ft_point(t_char *ract, void *n);
+int				ft_printf(const char *format, ...);
+int				ft_str(t_char *ract, void *s);
+int				ft_ub(t_char *ract, void *n);
 
 #endif
